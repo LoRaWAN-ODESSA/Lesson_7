@@ -24,21 +24,25 @@ public class Client {
         }
     }
 
+    public void creditOperation(double price) {
+        double creditPayment = Math.round((price - cash) / 36);
+        if(isWantCredit && isBuyCredit) {
+            System.out.println("The monthly loan payment will be: " + creditPayment + "$ per month.");
+            System.out.println("Dr. " + name + ", congratulations! You can pick up your new credit car!");
+        } else if(isWantCredit && !isBuyCredit) {
+            System.out.println("The monthly loan payment will be: " + creditPayment + "$ per month.");
+            System.out.println("Sorry, come back later, when you will want to buy credit");
+        } else {
+            System.out.println("Sorry, come back");
+        }
+    }
+
     public void carSell(double price, int carAvailable) {
         if(isAvailable(carAvailable) && isAdult()) {
             if(cash >= price) {
                 System.out.println("Dr. " + name + ", congratulations! You can pick up your new car!");
             } else {
-                double creditPayment = Math.round((price - cash) / 36);
-                if(isWantCredit && isBuyCredit) {
-                    System.out.println("The monthly loan payment will be: " + creditPayment + "$ per month.");
-                    System.out.println("Dr. " + name + ", congratulations! You can pick up your new credit car!");
-                } else if(isWantCredit && !isBuyCredit) {
-                    System.out.println("The monthly loan payment will be: " + creditPayment + "$ per month.");
-                    System.out.println("Sorry, come back later, when you will want to buy credit");
-                } else {
-                    System.out.println("Sorry, come back");
-                }
+                creditOperation(price);
             }
         }
     }
