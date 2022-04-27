@@ -40,28 +40,23 @@ public class Main {
 
         System.out.println("Client 1: " +client1.name);
         System.out.println("Car: " + car1.model);
-        DoSell sell1 = new DoSell();
-        sell1.carSell(client1.name, client1.age, client1.cash, client1.isWantCredit, client1.isBuyCredit, car1.price, car1.quantity);
+        client1.carSell(car1.price, car1.quantity);
 
         System.out.println("\nClient 2: " +client2.name);
         System.out.println("Car: " + car1.model);
-        DoSell sell2 = new DoSell();
-        sell2.carSell(client2.name, client2.age, client2.cash, client2.isWantCredit, client2.isBuyCredit, car1.price, car1.quantity);
+        client2.carSell(car1.price, car1.quantity);
 
         System.out.println("\nClient 3: " +client3.name);
         System.out.println("Car: " + car1.model);
-        DoSell sell3 = new DoSell();
-        sell3.carSell(client3.name, client3.age, client3.cash, client3.isWantCredit, client3.isBuyCredit, car1.price, car1.quantity);
+        client3.carSell(car1.price, car1.quantity);
 
         System.out.println("\nClient 4: " +client4.name);
         System.out.println("Car: " + car1.model);
-        DoSell sell4 = new DoSell();
-        sell4.carSell(client4.name, client4.age, client4.cash, client4.isWantCredit, client4.isBuyCredit, car1.price, car1.quantity);
+        client4.carSell(car1.price, car1.quantity);
 
         System.out.println("\nClient 5: " +client3.name);
         System.out.println("Car: " + car2.model);
-        DoSell sell5 = new DoSell();
-        sell5.carSell(client3.name, client3.age, client3.cash, client3.isWantCredit, client3.isBuyCredit, car2.price, car2.quantity);
+        client3.carSell(car2.price, car2.quantity);
     }
 
 }
